@@ -1,0 +1,44 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+.pnpm-store/
+.npm/
+dist/
+build/
+*.egg-info/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local run outputs
+baseline-runs/
+acceptance-runs/
+outputs/
+tmp/
+.tmp/
+temp/
+
+# Local governance / graph state
+.meta-kim/state/
+.meta-kim/cache/
+.meta-kim/backups/
+graphify-out/
+
+# Local secrets
+.env
+.env.*
+!.env.example

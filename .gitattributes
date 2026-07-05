@@ -1,0 +1,8 @@
+* text=auto
+
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+LICENSE text eol=lf
+NOTICE text eol=lf

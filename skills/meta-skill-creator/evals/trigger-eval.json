@@ -1,0 +1,22 @@
+{
+  "skill_name": "meta-skill-creator",
+  "purpose": "Portable trigger evaluation set for description quality.",
+  "cases": [
+    {"id":"T01","type":"should-trigger","query":"我想做一个新的 skill，专门把零散客户支持记录整理成跟进回复和交接清单，你先帮我设计这个 skill。","expected_route":"create Skill Contract and Package Plan"},
+    {"id":"T02","type":"should-trigger","query":"这个 SKILL.md 写完了但我觉得很弱，帮我重做成交付级 skill，还要有 eval 和 release gate。","expected_route":"audit and redesign existing skill"},
+    {"id":"T03","type":"should-trigger","query":"我想把这个 SOP 沉淀成 agent 每次都能复用的 skill，不要只是写提示词。","expected_route":"decide skillization and package resources"},
+    {"id":"T04","type":"should-trigger","query":"帮我给这个 skill 做 should-trigger / should-not-trigger 测试，description 现在总是误触发。","expected_route":"trigger eval workflow"},
+    {"id":"T05","type":"should-trigger","query":"我要做一个造 skill 的 skill，先给我产品设计、合同模板、baseline 和 A/B 规则。","expected_route":"full product design workflow"},
+    {"id":"N01","type":"should-not-trigger","query":"帮我把这段话润色得更像真人，不要 AI 味。","expected_route":"writing or editing workflow"},
+    {"id":"N02","type":"should-not-trigger","query":"翻译这封邮件成英文，语气礼貌一点。","expected_route":"direct translation"},
+    {"id":"N03","type":"should-not-trigger","query":"这个 Python 报错了，帮我修一下。","expected_route":"debugging workflow unless reusable skill requested"},
+    {"id":"N04","type":"should-not-trigger","query":"帮我写一段会议总结，明天要发给同事。","expected_route":"writing workflow unless reusable package requested"},
+    {"id":"N05","type":"should-not-trigger","query":"给我一个 prompt，让 ChatGPT 帮我写社交平台文案。","expected_route":"prompt writing unless reusable package requested"},
+    {"id":"M01","type":"near-miss","query":"帮我写个流程，以后可能会重复用。","expected_route":"decide skillization based on repeatability and resources"},
+    {"id":"M02","type":"near-miss","query":"这个模板挺好，能不能以后固定用？","expected_route":"trigger only if converting into skill asset/package"},
+    {"id":"M03","type":"near-miss","query":"这个能力要不要做成 agent？","expected_route":"clarify agent vs skill vs workflow vs tool"},
+    {"id":"A01","type":"ambiguous","query":"这个不行，重新做。","expected_route":"inspect context; trigger if recent object is skill output"},
+    {"id":"A02","type":"ambiguous","query":"我想做一个自动化。","expected_route":"ask whether skill, script, workflow, or app"},
+    {"id":"A03","type":"ambiguous","query":"把这个方法沉淀下来。","expected_route":"trigger if repeatable agent skill is intended"}
+  ]
+}

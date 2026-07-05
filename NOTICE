@@ -1,0 +1,8 @@
+Meta Skill Creator
+Copyright (c) 2026 KimYx0207
+
+This project is distributed under the MIT License. See LICENSE for details.
+
+The skill package is designed for local Agent Skill workflows across Claude
+Code and Codex-compatible runtimes. Runtime package copies are provided under
+the same MIT License.
