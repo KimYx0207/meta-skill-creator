@@ -125,7 +125,7 @@ A usable skill package should include:
 
 Scan the QR code to contact the author.
 
-<img src="docs/images/contact-qr.png" width="260" alt="Contact QR">
+<img src="docs/images/contact-qr.png" width="720" alt="Contact QR">
 
 WeChat Official Account: <strong>老金带你玩AI</strong>
 

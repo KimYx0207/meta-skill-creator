@@ -127,7 +127,7 @@ python skills/meta-skill-creator/scripts/check_closed_loop.py skills/meta-skill-
 
 扫码联系作者。
 
-<img src="docs/images/contact-qr.png" width="260" alt="联系二维码">
+<img src="docs/images/contact-qr.png" width="720" alt="联系二维码">
 
 微信公众号：<strong>老金带你玩AI</strong>
 
