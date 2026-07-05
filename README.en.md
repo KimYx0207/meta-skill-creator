@@ -72,16 +72,56 @@ Minimum write-in bar: the finding must prevent a concrete failure or make the ne
 
 ## Install
 
-Install the skill by copying the source package into the skill directory used by your runtime.
+First download this repository and enter the repository root. That is the directory that contains `skills/meta-skill-creator`.
 
-Claude Code:
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/KimYx0207/meta-skill-creator.git
+Set-Location meta-skill-creator
+Test-Path .\skills\meta-skill-creator\SKILL.md
+```
+
+If the last command returns `True`, install the skill.
+
+Claude Code global skill:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$env:USERPROFILE\.claude\skills\meta-skill-creator"
+```
+
+Codex project skill, installed into another project:
+
+```powershell
+$Project = "D:\codex_project\test-kim-skillcreater"
+New-Item -ItemType Directory -Force -Path "$Project\.codex\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$Project\.codex\skills\meta-skill-creator"
+```
+
+Codex-compatible user skill:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$env:USERPROFILE\.agents\skills\meta-skill-creator"
+```
+
+macOS / Linux / Git Bash:
+
+```bash
+git clone https://github.com/KimYx0207/meta-skill-creator.git
+cd meta-skill-creator
+test -f skills/meta-skill-creator/SKILL.md
+```
+
+Claude Code global skill:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R skills/meta-skill-creator ~/.claude/skills/meta-skill-creator
 ```
 
-Codex project skill:
+Codex project skill, installed into the current project:
 
 ```bash
 mkdir -p .codex/skills
@@ -94,6 +134,8 @@ Codex-compatible user skill:
 mkdir -p ~/.agents/skills
 cp -R skills/meta-skill-creator ~/.agents/skills/meta-skill-creator
 ```
+
+Common error: if your current directory is not this repository root, `skills/meta-skill-creator` does not exist. Clone the repository first, or change the `Copy-Item` / `cp` source path to the repository path you downloaded.
 
 ## Validate
 

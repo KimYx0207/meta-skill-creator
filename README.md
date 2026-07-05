@@ -74,16 +74,56 @@ Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 
 ## 安装
 
-把源 skill 包复制到对应运行时的 skill 目录即可。
+先把本仓库下载到本机，并进入仓库根目录。只有这个目录里才有 `skills/meta-skill-creator`。
 
-Claude Code:
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/KimYx0207/meta-skill-creator.git
+Set-Location meta-skill-creator
+Test-Path .\skills\meta-skill-creator\SKILL.md
+```
+
+如果上面返回 `True`，再安装。
+
+Claude Code 全局 skill:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$env:USERPROFILE\.claude\skills\meta-skill-creator"
+```
+
+Codex 项目级 skill，安装到另一个项目：
+
+```powershell
+$Project = "D:\codex_project\test-kim-skillcreater"
+New-Item -ItemType Directory -Force -Path "$Project\.codex\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$Project\.codex\skills\meta-skill-creator"
+```
+
+Codex 兼容用户级 skill:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills" | Out-Null
+Copy-Item -Recurse -Force -Path ".\skills\meta-skill-creator" -Destination "$env:USERPROFILE\.agents\skills\meta-skill-creator"
+```
+
+macOS / Linux / Git Bash:
+
+```bash
+git clone https://github.com/KimYx0207/meta-skill-creator.git
+cd meta-skill-creator
+test -f skills/meta-skill-creator/SKILL.md
+```
+
+Claude Code 全局 skill:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -R skills/meta-skill-creator ~/.claude/skills/meta-skill-creator
 ```
 
-Codex 项目级 skill:
+Codex 项目级 skill，安装到当前项目:
 
 ```bash
 mkdir -p .codex/skills
@@ -96,6 +136,8 @@ Codex 兼容用户级 skill:
 mkdir -p ~/.agents/skills
 cp -R skills/meta-skill-creator ~/.agents/skills/meta-skill-creator
 ```
+
+常见错误：如果当前目录不是本仓库根目录，`skills/meta-skill-creator` 就不存在。先 `git clone`，或者把 `Copy-Item` / `cp` 的源路径改成你下载好的仓库路径。
 
 ## 校验
 

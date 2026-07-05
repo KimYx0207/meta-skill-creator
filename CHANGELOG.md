@@ -19,4 +19,5 @@
 - Replaced Mermaid rich rendering in README files with a plain text flow for stable GitHub display.
 - Centered contact/support sections for GitHub README rendering.
 - Replaced "concise skill" wording with a light-entry, evidence-heavy quality bar.
+- Reworked install instructions with Windows PowerShell commands and an explicit clone/repository-root check.
 - Removed public-facing references to local development paths and runtime-copy directories.
