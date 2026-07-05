@@ -1,37 +1,44 @@
 # Meta Skill Creator
 
-Meta Skill Creator is an Agent Skill package for designing, refactoring, and reviewing reusable skills.
+> English version: [README.en.md](README.en.md)
 
-It helps an agent decide whether a repeated workflow deserves to become a skill, then guides domain research, product-surface design, package structure, validation, release gates, and closed-loop writeback.
+Meta Skill Creator 是一个用来设计、重构、评审 Agent Skill 的技能包。
 
-This is not a prompt beautifier. A good skill package should prove what it does, where it runs, what evidence it used, and what must happen after a failure.
+它不是“美化提示词”的工具，而是帮助 Agent 判断一个重复工作流是否值得技能化，并把它推进到领域研究、产品表面、包结构、验证、发布门禁和闭环写回。
 
-## What This Repository Contains
+一个合格的 skill 包不应该只看起来完整，还要能说明：它解决什么问题、读了什么证据、在哪里运行、怎么验证、失败后写回哪里。
 
-| Path | Purpose |
+## 仓库内容
+
+| 路径 | 用途 |
 |---|---|
-| `skills/meta-skill-creator/` | Source skill package |
-| `skills/meta-skill-creator/SKILL.md` | Lightweight trigger and routing entry |
-| `skills/meta-skill-creator/references/` | Domain, product, evaluation, release, and loop rules |
-| `skills/meta-skill-creator/assets/` | Fillable templates for package planning and run records |
-| `skills/meta-skill-creator/scripts/` | Package and loop validators |
-| `skills/meta-skill-creator/evals/` | Trigger evaluation cases |
-| `skills/meta-skill-creator/examples/` | Small input/output examples |
-| `CONTRIBUTING.md` | Maintainer workflow and verification rules |
+| `skills/meta-skill-creator/` | 源 skill 包 |
+| `skills/meta-skill-creator/SKILL.md` | 轻量触发和路由入口 |
+| `skills/meta-skill-creator/references/` | 领域、产品、评测、发布和闭环规则 |
+| `skills/meta-skill-creator/assets/` | 包计划和运行记录模板 |
+| `skills/meta-skill-creator/scripts/` | 包结构和闭环校验脚本 |
+| `skills/meta-skill-creator/evals/` | 触发评测用例 |
+| `skills/meta-skill-creator/examples/` | 小型输入/输出示例 |
+| `docs/images/` | 联系方式和支持二维码 |
+| `CONTRIBUTING.md` | 维护流程和发布校验规则 |
 
-## Method
+## 方法
 
-```mermaid
-flowchart LR
-    C["Critical Thinking<br/>Classify the request"] --> F["Fetch<br/>Gather decision-grade evidence"]
-    F --> D["Deep Thinking<br/>Design package and gates"]
-    D --> R["Review<br/>Separate proof layers"]
-    R --> L["Loop<br/>Write back, propose, defer, or block"]
+```text
+Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 ```
 
-## Install
+这个流程的重点是分清证明层级：
 
-Install the skill by copying the source package into the skill directory used by your runtime.
+- Critical Thinking：先判断请求类型和是否值得技能化。
+- Fetch：读取会改变决策的证据，而不是凭熟悉样例套模板。
+- Deep Thinking：设计包结构、产物链、工具路线和发布门禁。
+- Review：区分结构校验、运行证据、产物证据和人工确认。
+- Loop：写回、提案、延后或阻塞，不能把聊天总结冒充闭环。
+
+## 安装
+
+把源 skill 包复制到对应运行时的 skill 目录即可。
 
 Claude Code:
 
@@ -40,47 +47,67 @@ mkdir -p ~/.claude/skills
 cp -R skills/meta-skill-creator ~/.claude/skills/meta-skill-creator
 ```
 
-Codex project skill:
+Codex 项目级 skill:
 
 ```bash
 mkdir -p .codex/skills
 cp -R skills/meta-skill-creator .codex/skills/meta-skill-creator
 ```
 
-Codex-compatible user skill:
+Codex 兼容用户级 skill:
 
 ```bash
 mkdir -p ~/.agents/skills
 cp -R skills/meta-skill-creator ~/.agents/skills/meta-skill-creator
 ```
 
-## Validate
+## 校验
 
-Run from the repository root:
+在仓库根目录运行：
 
 ```bash
 python skills/meta-skill-creator/scripts/check_meta_skill_package.py skills/meta-skill-creator
 python skills/meta-skill-creator/scripts/check_closed_loop.py skills/meta-skill-creator
 ```
 
-These checks prove package structure and closed-loop contract coverage. They do not prove public release readiness by themselves. Public readiness still needs clean-session acceptance, baseline comparison, real artifact/runtime evidence when relevant, and human review.
+这些检查只能证明包结构和闭环契约存在，不能单独证明公开发布就绪。公开发布还需要干净会话验收、baseline 对比、真实产物/运行证据，以及人工评审。
 
-## Quality Bar
+## 质量标准
 
-A usable skill package should include:
+一个可用的 skill 包至少应该有：
 
-- a concise `SKILL.md`
-- domain research before design
-- a clear final artifact chain
-- trigger and output evaluation
-- at least one non-document asset or deterministic script
-- release gates that separate structure, runtime, artifact, and human evidence
-- a loop decision: `writeback`, `proposal`, `none-with-reason`, or `blocked`
+- 简洁的 `SKILL.md`
+- 先做领域研究，再做设计
+- 明确的最终产物链路
+- 触发评测和输出评测
+- 至少一个非文档资产或确定性脚本
+- 能区分结构、运行、产物、人工确认的发布门禁
+- 闭环决策：`writeback`、`proposal`、`none-with-reason` 或 `blocked`
 
-## Contributing
+## 联系方式
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the maintainer workflow, editing rules, originality boundary, and release checks.
+扫码联系作者。
 
-## License
+![联系二维码](docs/images/contact-qr.png)
 
-MIT. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+微信公众号：<strong>老金带你玩AI</strong>
+
+## 支持
+
+如果 Meta Skill Creator 对你有帮助，可以请作者喝杯咖啡。
+
+<table>
+<tr><th>微信支付</th><th>支付宝</th></tr>
+<tr>
+<td align="center"><img src="docs/images/wechat-pay.jpg" width="260" alt="微信收款码"></td>
+<td align="center"><img src="docs/images/alipay.jpg" width="260" alt="支付宝收款码"></td>
+</tr>
+</table>
+
+## 贡献
+
+维护流程、编辑规则、原创边界和发布校验见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 协议
+
+MIT。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。

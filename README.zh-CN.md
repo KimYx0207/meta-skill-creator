@@ -1,5 +1,7 @@
 # Meta Skill Creator
 
+> English version: [README.en.md](README.en.md)
+
 Meta Skill Creator 是一个用来设计、重构、评审 Agent Skill 的技能包。
 
 它不是“美化提示词”的工具，而是帮助 Agent 判断一个重复工作流是否值得技能化，并把它推进到领域研究、产品表面、包结构、验证、发布门禁和闭环写回。
@@ -17,17 +19,22 @@ Meta Skill Creator 是一个用来设计、重构、评审 Agent Skill 的技能
 | `skills/meta-skill-creator/scripts/` | 包结构和闭环校验脚本 |
 | `skills/meta-skill-creator/evals/` | 触发评测用例 |
 | `skills/meta-skill-creator/examples/` | 小型输入/输出示例 |
+| `docs/images/` | 联系方式和支持二维码 |
 | `CONTRIBUTING.md` | 维护流程和发布校验规则 |
 
 ## 方法
 
-```mermaid
-flowchart LR
-    C["Critical Thinking<br/>判断请求类型"] --> F["Fetch<br/>收集会改变决策的证据"]
-    F --> D["Deep Thinking<br/>设计包和门禁"]
-    D --> R["Review<br/>区分证明层级"]
-    R --> L["Loop<br/>写回、提案、延后或阻塞"]
+```text
+Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 ```
+
+这个流程的重点是分清证明层级：
+
+- Critical Thinking：先判断请求类型和是否值得技能化。
+- Fetch：读取会改变决策的证据，而不是凭熟悉样例套模板。
+- Deep Thinking：设计包结构、产物链、工具路线和发布门禁。
+- Review：区分结构校验、运行证据、产物证据和人工确认。
+- Loop：写回、提案、延后或阻塞，不能把聊天总结冒充闭环。
 
 ## 安装
 
@@ -76,6 +83,26 @@ python skills/meta-skill-creator/scripts/check_closed_loop.py skills/meta-skill-
 - 至少一个非文档资产或确定性脚本
 - 能区分结构、运行、产物、人工确认的发布门禁
 - 闭环决策：`writeback`、`proposal`、`none-with-reason` 或 `blocked`
+
+## 联系方式
+
+扫码联系作者。
+
+![联系二维码](docs/images/contact-qr.png)
+
+微信公众号：<strong>老金带你玩AI</strong>
+
+## 支持
+
+如果 Meta Skill Creator 对你有帮助，可以请作者喝杯咖啡。
+
+<table>
+<tr><th>微信支付</th><th>支付宝</th></tr>
+<tr>
+<td align="center"><img src="docs/images/wechat-pay.jpg" width="260" alt="微信收款码"></td>
+<td align="center"><img src="docs/images/alipay.jpg" width="260" alt="支付宝收款码"></td>
+</tr>
+</table>
 
 ## 贡献
 
