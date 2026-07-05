@@ -37,6 +37,34 @@ If network, local sources, or user materials are unavailable, say exactly which 
 
 If the evidence is still too thin after the sweep, return `research-needed`. Do not write `SKILL.md` yet.
 
+## Network Research Gate
+
+Deep research is not satisfied by local files alone when the domain depends on current facts.
+
+Use online research when any of these are true:
+
+- platform rules, marketplace behavior, APIs, SDKs, model capabilities, runtime tools, policies, laws, prices, quotas, or public standards may have changed;
+- the skill depends on a third-party product, public platform, open-source project, current community pattern, or competitor workflow;
+- the user asks for "latest", "current", "deep research", "联网", "开源", "竞品", "平台规则", or release readiness;
+- the package would claim public compatibility, publishability, superiority, safety, or commercial readiness.
+
+Minimum online sweep:
+
+1. Official or platform documentation.
+2. Open standard or runtime documentation when the skill must be portable.
+3. High-signal public examples or repositories that show artifact shape and failure modes.
+4. Counterevidence: stale docs, host limitations, incompatible tools, policy risk, or claims that cannot be verified.
+
+The sweep must produce a `Source Map`, `Key Findings`, `Counterevidence`, and `Decision Impact`.
+
+If network access is unavailable or blocked, record the unavailable sources and return one of:
+
+- `research-needed`: enough to describe the missing research, not enough to design safely;
+- `blocked`: the missing online evidence is required for safety, compliance, platform behavior, or release readiness;
+- `design-candidate-with-assumptions`: only for low-risk local drafts, never for a ready claim.
+
+Do not claim `ready`, `public-ready`, `platform-compatible`, or `better than baseline` without online evidence when current external facts matter.
+
 ## Domain Research Brief
 
 Every candidate skill starts with this brief:
@@ -45,6 +73,12 @@ Every candidate skill starts with this brief:
 - Suspected domain(s):
 - Domain confidence:
 - Evidence read:
+- Online evidence read:
+- Online sources unavailable:
+- Source Map:
+- Key Findings:
+- Counterevidence:
+- Decision Impact:
 - Evidence sweep attempted:
 - Unavailable evidence paths:
 - Users / roles:
@@ -140,3 +174,4 @@ Stop before writing runtime instructions when:
 - real-material boundaries are missing,
 - evidence does not change any design decision,
 - the package plan exists only because "skills should have files".
+- current external facts matter but no online source was checked.

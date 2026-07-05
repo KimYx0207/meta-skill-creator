@@ -26,6 +26,50 @@ This is not a prompt beautifier. A good skill package should prove what it does,
 Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 ```
 
+The point of this flow is to keep proof layers separate:
+
+- Critical Thinking: decide the request type and whether it deserves a reusable skill.
+- Fetch: read evidence that can change the decision, instead of copying a familiar example.
+- Deep Thinking: design package structure, artifact chain, tool route, and release gates.
+- Review: separate structure checks, runtime evidence, artifact evidence, and human confirmation.
+- Loop: write back, propose, defer, or block; do not treat a chat summary as closure.
+
+## How Network Deep Research Works
+
+Deep research is not local-file reading only. If the task depends on information that can change, the agent must use online research. This includes platform rules, APIs/SDKs, runtime capabilities, open-source projects, competitor practice, policy/compliance, pricing, model capabilities, tool availability, and current community practice.
+
+A qualified online research pass should produce:
+
+1. **Source map**: which official docs, open standards, high-signal projects, user material, failure cases, and counterexamples were checked.
+2. **Key findings**: which facts change trigger boundaries, artifact chain, tool route, file structure, evals, or release gates.
+3. **Counterevidence and uncertainty**: what is stale, conflicting, host-specific, or still needs user confirmation.
+4. **Write-in destination**: whether the finding belongs in `SKILL.md`, `references/`, `assets/`, `scripts/`, `evals/`, `examples/`, or only the run record.
+
+If the environment cannot access the network, state which online sources were unavailable. In that case the output may be `research-needed`, `blocked`, or an assumption-marked design candidate, but it must not claim release readiness.
+
+## What Can Be Written Into A Skill
+
+Research findings must pass a write-in decision before becoming durable skill rules:
+
+| Destination | Write this | Do not write this |
+|---|---|---|
+| `SKILL.md` | Trigger boundaries, first action, hard stops, resource routing, verification lens | Long research, platform details, one-off summaries |
+| `references/` | Domain rules, evidence model, artifact chain, failure modes, release gates | Unabstracted competitor structure, copied wording, private run logs |
+| `assets/` | Reusable templates, briefs, checklists, run-record forms | Drafts useful for only one task |
+| `scripts/` | Repeatable deterministic checks, transforms, or generation helpers | Judgment that requires model discretion |
+| `evals/` | Trigger, false-positive, near-miss, output-quality, and regression cases | Examples that only prove the output looked good once |
+| `examples/` | Small realistic input/output examples | Private customer data, fake run evidence, internal scores |
+
+Minimum write-in bar: the finding must prevent a concrete failure or make the next run more stable and verifiable. Otherwise, keep it as run evidence and do not turn it into a long-term rule.
+
+## Public Sources
+
+- [Anthropic: Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+- [Claude Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills)
+- [OpenAI API Skills docs](https://developers.openai.com/api/docs/guides/tools-skills)
+- [Agent Skills open specification](https://agentskills.io/specification)
+
 ## Install
 
 Install the skill by copying the source package into the skill directory used by your runtime.
@@ -66,8 +110,9 @@ These checks prove package structure and closed-loop contract coverage. They do 
 
 A usable skill package should include:
 
-- a concise `SKILL.md`
+- a light-entry but evidence-heavy `SKILL.md`
 - domain research before design
+- network deep research when facts may have changed, with sources, key findings, and counterevidence
 - a clear final artifact chain
 - trigger and output evaluation
 - at least one non-document asset or deterministic script
@@ -76,13 +121,19 @@ A usable skill package should include:
 
 ## Contact
 
+<div align="center">
+
 Scan the QR code to contact the author.
 
-![Contact QR](docs/images/contact-qr.png)
+<img src="docs/images/contact-qr.png" width="260" alt="Contact QR">
 
 WeChat Official Account: <strong>老金带你玩AI</strong>
 
+</div>
+
 ## Support
+
+<div align="center">
 
 If Meta Skill Creator has been useful, support the project with a coffee.
 
@@ -93,6 +144,8 @@ If Meta Skill Creator has been useful, support the project with a coffee.
 <td align="center"><img src="docs/images/alipay.jpg" width="260" alt="Alipay QR"></td>
 </tr>
 </table>
+
+</div>
 
 ## Contributing
 

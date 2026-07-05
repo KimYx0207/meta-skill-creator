@@ -45,7 +45,7 @@ REQUIRED_FILES = [
 
 KEY_PHRASES = {
     "SKILL.md": ["意图与领域研究", "领域研究简报", "research-needed", "Fetch", "基线", "触发评测", "包计划", "发布门禁", "本地能力清单", "多模态简报", "闭环治理", "运行记录", "none-with-reason"],
-    "references/intent-domain-research.md": ["No Guessing Rule", "Domain Research Brief", "Fetch Before", "research-needed", "Research-To-Design Chain", "Local capability inventory"],
+    "references/intent-domain-research.md": ["No Guessing Rule", "Domain Research Brief", "Fetch Before", "Network Research Gate", "Online evidence read", "research-needed", "Research-To-Design Chain", "Local capability inventory"],
     "references/experience-surface-model.md": ["Artifact Chain", "Surface After Domain Research", "worked example", "Local Capability Inventory"],
     "references/product-design.md": ["3 分钟可见结果", "体验流程设计", "例子不是元规则", "当前边界", "先做意图领域研究", "Local Capability", "Multimodal", "Loop Closure Board"],
     "references/skill-contract.md": ["Domain Research Contract", "Experience Surface Contract", "Trigger Contract", "Eval Contract", "Boundary Contract", "Local Capability / Multimodal Contract"],
@@ -58,6 +58,7 @@ KEY_PHRASES = {
     "assets/loop-run-record-template.md": ["Intent Core", "Evidence Fetch", "Product Surface", "Package Contract", "Verification Evidence", "Loop Decision", "Scar Record", "next_run_reuse_key"],
     "scripts/check_acceptance_runs.py": ["REQUIRED_FILES", "score delta", "Acceptance run check"],
     "scripts/check_closed_loop.py": ["REQUIRED_FILES", "BANNED_EXTERNAL_MARKERS", "Closed-loop check"],
+    "references/evidence.md": ["Evidence Card Shape", "Online Evidence Standard", "Source Map", "Key Findings", "Write-In Decision", "none-with-reason"],
     "references/evaluation-method.md": ["Unknown Domain Research Test", "research-needed", "Domain Research Brief", "Multimodal Tool Route Regression", "No Domain Research Brief", "Surface guessed", "baseline", "Domain Research", "multimodal", "Loop Closure"],
 }
 
