@@ -10,10 +10,12 @@ Do not commit runtime projections, local state, generated graph output, acceptan
 
 Use this sequence for non-trivial changes:
 
-1. Critical Thinking: classify the request as skill design, package maintenance, documentation, validation, or release preparation.
-2. Fetch: read the relevant `SKILL.md`, direct references, validators, examples, and user-provided material.
-3. Deep Thinking: map package boundaries, runtime compatibility, evidence layers, originality risks, and release risks.
-4. Review: run validators and report which proof layer passed.
+1. Critical Thinking: classify the request as skill design, package maintenance, documentation, validation, release preparation, or not-a-skill; record user result, scope, non-goals, risk, and first evidence route.
+2. Fetch: read the relevant `SKILL.md`, direct references, validators, examples, user-provided material, graph/search anchors, current official sources when external facts matter, high-signal examples, and counterevidence.
+3. Deep Thinking: map package boundaries, runtime compatibility, artifact chain, tool route, acceptance criteria, evidence layers, originality risks, and release risks before editing.
+4. Review: run validators and report which proof layer passed: structure, contract, runtime/tool, artifact, baseline/regression, human review, and loop decision.
+
+Top-level creation-rule work must also satisfy `skills/meta-skill-creator/references/creation-rule-standard.md`. A change that only makes the prose longer, without stage outputs and pass/fail criteria, is not accepted.
 
 ## Editing Rules
 

@@ -34,6 +34,19 @@ The point of this flow is to keep proof layers separate:
 - Review: separate structure checks, runtime evidence, artifact evidence, and human confirmation.
 - Loop: write back, propose, defer, or block; do not treat a chat summary as closure.
 
+## Top-Level Creation Rule Acceptance Criteria
+
+A top-level creation rule is not a longer prompt. It is an executable and reviewable stage contract. The full standard is in `skills/meta-skill-creator/references/creation-rule-standard.md`.
+
+| Stage | Required output | Pass standard |
+|---|---|---|
+| Critical Thinking | Task class, user result, scope, non-goals, risk, first evidence route | The agent can decide whether the workflow deserves a skill, and the next step is evidence fetch rather than file writing |
+| Fetch | Source map, evidence read, unavailable evidence, key findings, counterevidence, decision impact | Each key design judgment is evidence-backed or assumption-marked; online research is used when required |
+| Deep Thinking | Package contract, artifact chain, tool route, write-in destination, acceptance plan | Each new file or rule prevents a named failure mode, and acceptance can be checked |
+| Review | Validation commands, proof layers, artifact/runtime evidence, ready level, loop decision | Structure pass is not treated as quality proof; failures become writeback, proposal, deferral, or blocked status |
+
+Minimum bar: a creation rule without stage outputs, pass/fail conditions, failure handling, and loop decision is not accepted.
+
 ## How Network Deep Research Works
 
 Deep research is not local-file reading only. If the task depends on information that can change, the agent must use online research. This includes platform rules, APIs/SDKs, runtime capabilities, open-source projects, competitor practice, policy/compliance, pricing, model capabilities, tool availability, and current community practice.
@@ -68,6 +81,10 @@ Minimum write-in bar: the finding must prevent a concrete failure or make the ne
 - [Claude Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills)
 - [OpenAI API Skills docs](https://developers.openai.com/api/docs/guides/tools-skills)
+- [OpenAI Prompt Guidance](https://developers.openai.com/api/docs/guides/prompt-guidance)
+- [OpenAI Evaluation Best Practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices)
+- [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+- [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [Agent Skills open specification](https://agentskills.io/specification)
 
 ## Install

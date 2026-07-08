@@ -10,6 +10,7 @@
 - Added contact and support QR images under `docs/images/`.
 - Added `README.en.md` while making `README.md` the default Chinese entry.
 - Added explicit network deep research and write-in decision rules to README and skill references.
+- Added a top-level creation-rule standard with Critical Thinking, Fetch, Deep Thinking, Review, and Loop acceptance gates.
 
 ### Changed
 
@@ -20,4 +21,5 @@
 - Centered contact/support sections for GitHub README rendering.
 - Replaced "concise skill" wording with a light-entry, evidence-heavy quality bar.
 - Reworked install instructions with Windows PowerShell commands and an explicit clone/repository-root check.
+- Hardened maintainer workflow and validator coverage around stage outputs, pass/fail criteria, and proof-layer reporting.
 - Removed public-facing references to local development paths and runtime-copy directories.

@@ -36,6 +36,19 @@ Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 - Review：区分结构校验、运行证据、产物证据和人工确认。
 - Loop：写回、提案、延后或阻塞，不能把聊天总结冒充闭环。
 
+## 顶级创建规则验收标准
+
+顶级创建规则不是“更长的提示词”，而是能被执行和评审的阶段契约。完整标准见 `skills/meta-skill-creator/references/creation-rule-standard.md`。
+
+| 阶段 | 必须产出 | 通过标准 |
+|---|---|---|
+| Critical Thinking | 任务类型、用户结果、范围、非目标、风险、第一证据路线 | 能判断是否值得技能化，且下一步是取证而不是直接写文件 |
+| Fetch | 来源地图、已读证据、不可得证据、关键结论、反证、决策影响 | 每个关键设计判断都有证据或明确假设；需要联网时已联网 |
+| Deep Thinking | 包合同、产物链、工具路线、文件写入位置、验收计划 | 每个新增文件或规则都绑定具体失败模式，并且验收可打勾 |
+| Review | 校验命令、证明层级、产物/运行证据、ready 级别、闭环决策 | 不把结构通过当成质量通过；失败能进入回写、提案、延后或阻塞 |
+
+最低门槛：没有阶段产物、没有 pass/fail 条件、没有失败处理和闭环决策的创建规则，不算合格。
+
 ## 联网深度研究怎么做
 
 深度研究不是只读本地文件。只要任务涉及会变化的信息，就必须联网；例如平台规则、API/SDK、运行时能力、开源项目、竞品实践、政策合规、价格、模型能力、工具可用性和社区最佳实践。
@@ -70,6 +83,10 @@ Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 - [Claude Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [OpenAI Codex Agent Skills docs](https://developers.openai.com/codex/skills)
 - [OpenAI API Skills docs](https://developers.openai.com/api/docs/guides/tools-skills)
+- [OpenAI Prompt Guidance](https://developers.openai.com/api/docs/guides/prompt-guidance)
+- [OpenAI Evaluation Best Practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices)
+- [Anthropic: Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+- [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [Agent Skills open specification](https://agentskills.io/specification)
 
 ## 安装

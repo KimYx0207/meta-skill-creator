@@ -19,6 +19,7 @@ license: MIT
 - 需要补全模糊意图、让用户多次选择或先锁 MVP 再批量生成的 skill，必须设计 Codex `request_user_input` / Claude Code `AskUserQuestion` 等宿主原生决策面；Markdown 选择卡只能是降级等待界面，不能冒充真实确认。
 - 图片、视频、演示文稿、文档、报表、仪表盘或其他渲染产物，优先检查 Image2 / 宿主原生能力；MCP、脚本、SVG、静态预览是降级或辅助路线，必须有降级证据。
 - 外部材料只能抽象成质量原则；不要复制别人的命名、页面结构、视觉系统、提示词、示例或商业话术。
+- 顶级创建规则必须先写清触发边界、用户结果、范围、证据模型、阶段契约、产物链、工具路线、验收标准、失败处理和写回规则；不能只写流程口号。
 - 每次交付都要闭环：记录运行证据、评审发现、`writeback` / `proposal` / `none-with-reason` / `blocked` 决策，并把可复用学习写回对应 reference、template、validator、eval 或 example。
 
 ## 渐进加载
@@ -27,6 +28,7 @@ license: MIT
 
 | 当前阶段 | 读取 | 何时使用 |
 |---|---|---|
+| 顶级创建规则 | `references/creation-rule-standard.md` | 用户要求规则、规范、流程、验收标准、Critical/Fetch/Deep Thinking/Review 阶段契约，或要评审“创建规则是否足够顶级”。 |
 | 意图与领域研究 | `references/intent-domain-research.md`、`assets/domain-research-brief-template.md` | 用户输入模糊、领域陌生、像战略判断，或可能只是一次性提示词；先写领域研究简报，证据不足标 `research-needed`。 |
 | 表面与产物链 | `references/experience-surface-model.md` | Skill 要产出文件、媒体、截图、演示文稿、报告、仪表盘或其他可见产物。 |
 | 产品化设计 | `references/product-design.md` | 需要决定包内文件、3 分钟可见结果、用户旅程或首次公开表面。 |
@@ -43,12 +45,12 @@ license: MIT
 
 ## 工作流
 
-1. 分类：判断是 `new-skill`、`refactor-skill`、`evaluate-skill`、`package-plan`，还是 `not-a-skill`。
-2. Fetch 与研究：只收集会改变包决策、产物表面、工具路线或验收标准的证据。
-3. 设计：确定结果、触发边界、输入输出、本地能力路线、交互式决策面、MVP 锁定门、包结构和公开失败模式。
-4. 构建：只创建或修改当前目标必须触碰的最小文件集。
-5. 验证：运行包校验、闭环校验和领域校验；报告结构证据、产物证据、运行证据和人工确认分别证明了什么。
-6. 闭环：填写运行记录；决定 `writeback`、`proposal`、`none-with-reason` 或 `blocked`；只有可复用学习才写回规则，不能把聊天总结冒充闭环。
+1. Critical Thinking：判断是 `new-skill`、`refactor-skill`、`evaluate-skill`、`package-plan`、`release-prep` 还是 `not-a-skill`；写清用户结果、范围、非目标、风险、第一证据路线和是否值得技能化。
+2. Fetch：只收集会改变包决策、产物表面、工具路线或验收标准的证据；包括用户材料、本地包、Graphify/搜索、官方/平台文档、高信号样例、反证和不可得路径。
+3. Deep Thinking：把证据综合成触发边界、输入输出、产物链、本地能力路线、交互式决策面、MVP 锁定门、包结构、评测计划和公开失败模式。
+4. Build：只创建或修改当前目标必须触碰的最小文件集；每个新增文件或规则必须绑定一个具体失败模式。
+5. Review：运行包校验、闭环校验和领域校验；报告结构证据、产物证据、运行/工具证据、基线证据和人工确认分别证明了什么。
+6. Loop：填写运行记录；决定 `writeback`、`proposal`、`none-with-reason` 或 `blocked`；只有可复用学习才写回规则，不能把聊天总结冒充闭环。
 
 ## 包结构
 
@@ -85,6 +87,13 @@ python scripts/check_closed_loop.py .
 ```
 
 如果生成的包有自己的脚本，也要按实际产物运行。验证时必须分清结构检查、生成产物证据、运行/工具证据和人工验收；一个层面的通过不能替代全部通过。
+
+顶级创建规则的最低验收：
+
+- Critical Thinking 通过：任务类型、用户结果、范围、非目标、风险和第一证据路线明确。
+- Fetch 通过：可用证据扫查已尝试，在线来源在需要时已检查，反证和不可得路径已记录。
+- Deep Thinking 通过：包合同、产物链、工具路线、验收计划和文件写入位置能被审查。
+- Review 通过：验证命令、产物证据、证明层级、ready 级别、失败处理和闭环决策明确。
 
 ## 最终报告
 
