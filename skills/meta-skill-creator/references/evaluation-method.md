@@ -27,6 +27,7 @@
 - 是否以 Domain Research Brief 开头。**No Domain Research Brief = 不通过**。
 - 是否从证据推导 surface，而不是从熟悉例子猜。**Surface guessed = Hard Cap**。
 - 是否产出用户可见的最终 artifact。
+- 是否把单个案例中的目标岗位、受众标签、公司名、栏目名或验收短语误写进长期 trigger、scope、默认栏目或拒绝交付规则（**Target Role Locking Regression**：案例对象应是变量，除非用户明确要求岗位专用 skill）。
 - 未知领域是否在尝试证据检索后再返回 `research-needed`（**Unknown Domain Research Test**：先检索后停）。
 - 多模态 skill 是否先探测本地工具、写结构化 brief、并按 route 顺序产出（**Multimodal Tool Route Regression**：Image2/host-native 优先，MCP 降级要证据）。
 - 是否在没有真实输出证据时硬说 ready。
@@ -37,7 +38,7 @@
 
 ## 4. Regression 检查
 
-编辑后对比新旧版本，确认不引入新误触发、不丢领域研究纪律、不降多模态 brief 质量。首次发布无旧版可回归，这一节是面向未来编辑的契约。
+编辑后对比新旧版本，确认不引入新误触发、不丢领域研究纪律、不降多模态 brief 质量、不把样例里的目标岗位或利益相关方写死成长期规则。首次发布无旧版可回归，这一节是面向未来编辑的契约。
 
 ## 5. Loop Closure 检查
 
@@ -95,6 +96,7 @@ test-results/<date>-<skill>-acceptance/
 
 - **Trigger Eval**：should-trigger / should-not-trigger / near-miss / ambiguous / expected description changes
 - **Output Eval**：fuzzy / incomplete / risky-boundary / real-material / multimodal-tool-route / final artifact scoring
+- **Case Variable Eval**：target-role-locking / stakeholder-view-variable / role-specific-scope-justification / hardcoded-reject-rule scan
 - **Tool & Multimodal**：local capability inventory / native-MCP-local route / Image2 host-native first proof / downgrade proof / structured brief / output evidence / clean-session check
 - **Baseline**：prompt / without path / with path / scoring dimensions / result
 - **Regression**：previous version / new version / comparison prompts / pass-fail threshold / regression found

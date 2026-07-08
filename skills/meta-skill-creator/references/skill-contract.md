@@ -45,6 +45,7 @@
 - Evidence sweep attempted:
 - Unavailable evidence paths:
 - Users / roles:
+- Case variables that must not become fixed scope:
 - Pressure moments:
 - Existing workflow:
 - Native artifacts:
@@ -144,6 +145,7 @@ theme
 
 - 不替用户擅自覆盖系统级 `skill-creator`。
 - 不把第三方样本写成官方标准。
+- 不把单个案例里的目标岗位、受众标签、公司名、部门名、栏目名或验收短语写死进 `description`、trigger、scope、默认栏目或拒绝交付规则；除非用户明确要求岗位专用 skill，或证据说明这是合规/安全/领域边界。
 - 不用 star 或 README 宣称直接证明交付级。
 - 不承诺自动生成的 skill 一定优于人工策划。
 - 不把 quick validate 当成产品质量证明。

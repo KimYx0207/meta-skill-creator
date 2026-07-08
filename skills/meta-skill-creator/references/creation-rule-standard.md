@@ -16,6 +16,27 @@ This standard is distilled from current agent-skill and agent-evaluation practic
 
 Do not copy outside wording or package structure into generated skills. Convert public research into abstract failure-prevention rules, validators, templates, and eval cases.
 
+## Case Variable Boundary
+
+Do not turn a single user's example into a durable rule by accident.
+
+Names such as "boss", "sales", "teacher", "operator", "finance", "product", a company name, a department, a platform account, or a one-run audience label are case variables unless the user explicitly asks for a role-specific skill or the domain has a safety/compliance reason to lock the role.
+
+Default handling:
+
+- Put case roles into input fields such as `recipient_role`, `stakeholder_view`, `audience`, `review_lens`, or `handoff_target`.
+- Keep them in examples or eval cases when they demonstrate a failure mode.
+- Do not write them into `description`, trigger scope, default output sections, hard stops, release gates, or "reject delivery" rules as fixed labels.
+- Convert role-specific requirements into functional requirements. For example, do not hardcode "boss quick-read must include whether to continue investing"; use "each requested decision view must include the decision question, evidence, and next action."
+
+Allowed exceptions:
+
+- The user explicitly requests a skill only for that role or department.
+- Legal, medical, financial, security, or platform rules require role-specific boundaries.
+- The target role is the domain itself, not a sample audience, and the evidence map explains why it must be locked.
+
+If a role is locked, record why it is durable scope rather than a case variable.
+
 ## Required Anatomy
 
 Every top-level creation rule must define these fields before build:
@@ -25,6 +46,7 @@ Every top-level creation rule must define these fields before build:
 | Trigger boundary | When to use, when not to use, near-miss and ambiguous cases | Skill misfires or never fires |
 | User result | Real user, pressure moment, final artifact, acceptance moment | Output optimizes for the prompt instead of the job |
 | Scope | Included work, excluded work, destructive or external-state boundaries | Agent expands the task silently |
+| Case variable boundary | Which names, target roles, stakeholder labels, industries, companies, example sections, and acceptance phrases are one-run variables | One example becomes a hardcoded skill rule |
 | Evidence model | Required user material, local sources, graph/search, official sources, high-signal examples, counterevidence | Design is guessed |
 | Stage contract | Critical Thinking, Fetch, Deep Thinking, Review, Loop inputs and outputs | Process becomes a slogan |
 | Artifact chain | Raw input to native final artifact, including intermediate boards and generated files | Skill produces only prose |
@@ -51,6 +73,7 @@ Required actions:
 
 - Classify the task as `new-skill`, `refactor-skill`, `evaluate-skill`, `package-plan`, `release-prep`, or `not-a-skill`.
 - Identify user, pressure moment, final artifact, and why ordinary prompting is insufficient.
+- Separate durable scope from case variables such as names, target roles, stakeholder labels, industries, companies, example sections, and one-run acceptance phrases.
 - Name scope, non-goals, destructive or external-state risks, and likely proof layers.
 - Decide the first evidence route and whether online research may be required.
 
@@ -116,6 +139,7 @@ Inputs:
 Required actions:
 
 - Define the result contract: trigger, input, output, artifact chain, tool route, safety/originality boundary, and fallback.
+- Define the case-variable contract: which roles, audiences, stakeholder views, labels, and acceptance phrases stay configurable instead of becoming fixed skill rules.
 - Choose the smallest package structure that prevents real failure modes.
 - Decide what belongs in `SKILL.md`, `references/`, `assets/`, `scripts/`, `evals`, and `examples`.
 - Define test cases and acceptance criteria before or alongside edits.
@@ -128,6 +152,7 @@ Required output:
 Pass criteria:
 
 - Every new file or rule has a named failure mode it prevents.
+- Example-specific roles or stakeholder labels are represented as variables unless there is explicit evidence for locking them.
 - Acceptance criteria are specific enough that another reviewer can mark pass/fail.
 - The plan separates structure checks, runtime/tool proof, artifact proof, baseline proof, and human confirmation.
 
@@ -181,6 +206,7 @@ Use this table as the minimum reviewer checklist for top-level creation rules.
 | Fetch gate | User/local/graph/official/high-signal/counterevidence sweep attempted as available | Evidence map |
 | Research gate | Current external facts checked when they can affect design or release claims | Source map and decision impact |
 | Contract gate | Trigger, input, output, artifact chain, tool route, boundary, and fallback are defined | Skill contract or package plan |
+| Variable gate | Case-specific roles, audiences, labels, company names, and example acceptance phrases are kept as variables unless explicitly justified | Case variable boundary |
 | Package gate | Each file exists for a reason and maps to a failure mode | Package map |
 | Eval gate | Trigger, output, baseline/regression, and risky/ambiguous cases are defined | `evals/` and acceptance plan |
 | Runtime gate | Scripts/tools/native routes are run or honestly marked unavailable/partial/blocked | Command logs or capability notes |
@@ -198,6 +224,7 @@ Stop before writing or claiming ready when:
 - Evidence sweep has not been attempted.
 - A current external claim is unverified.
 - Acceptance criteria are absent or cannot be checked.
+- A sample role or stakeholder label is hardcoded into trigger, scope, default sections, or reject-delivery rules without explicit durable-scope justification.
 - The final artifact is unnamed.
 - The package has no eval or validator path.
 - The skill requires user decisions but has no decision surface or stop state.

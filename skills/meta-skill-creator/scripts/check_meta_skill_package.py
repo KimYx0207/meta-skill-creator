@@ -47,10 +47,10 @@ REQUIRED_FILES = [
 KEY_PHRASES = {
     "SKILL.md": ["意图与领域研究", "领域研究简报", "research-needed", "Fetch", "基线", "触发评测", "包计划", "发布门禁", "本地能力清单", "多模态简报", "闭环治理", "运行记录", "none-with-reason"],
     "references/intent-domain-research.md": ["No Guessing Rule", "Domain Research Brief", "Fetch Before", "Network Research Gate", "Online evidence read", "research-needed", "Research-To-Design Chain", "Local capability inventory"],
-    "references/creation-rule-standard.md": ["Required Anatomy", "Stage Contract", "Critical Thinking", "Fetch", "Deep Thinking", "Review", "Acceptance Matrix", "Hard Stops", "writeback", "none-with-reason"],
+    "references/creation-rule-standard.md": ["Required Anatomy", "Case Variable Boundary", "target roles", "stakeholder", "Stage Contract", "Critical Thinking", "Fetch", "Deep Thinking", "Review", "Acceptance Matrix", "Hard Stops", "writeback", "none-with-reason"],
     "references/experience-surface-model.md": ["Artifact Chain", "Surface After Domain Research", "worked example", "Local Capability Inventory"],
     "references/product-design.md": ["3 分钟可见结果", "体验流程设计", "例子不是元规则", "当前边界", "先做意图领域研究", "Local Capability", "Multimodal", "Loop Closure Board"],
-    "references/skill-contract.md": ["Domain Research Contract", "Experience Surface Contract", "Trigger Contract", "Eval Contract", "Boundary Contract", "Local Capability / Multimodal Contract"],
+    "references/skill-contract.md": ["Domain Research Contract", "Case variables", "Experience Surface Contract", "Trigger Contract", "Eval Contract", "Boundary Contract", "Local Capability / Multimodal Contract"],
     "references/multimodal-tooling.md": ["Capability Inventory", "Multimodal Brief Contract", "Route Selection Rule", "Output evidence", "Image2 / host-native", "Downgrade proof"],
     "references/release-gate.md": ["发布门禁", "十四项门禁", "证据扫查", "验收运行记录", "就绪规则", "闭环", "none-with-reason"],
     "references/closed-loop-governance.md": ["闭环定义", "原创循环", "阶段契约", "写回决策", "证据分层", "漂移信号", "原创边界", "nextRunReuseKey"],
@@ -61,7 +61,7 @@ KEY_PHRASES = {
     "scripts/check_acceptance_runs.py": ["REQUIRED_FILES", "score delta", "Acceptance run check"],
     "scripts/check_closed_loop.py": ["REQUIRED_FILES", "BANNED_EXTERNAL_MARKERS", "Closed-loop check"],
     "references/evidence.md": ["Evidence Card Shape", "Online Evidence Standard", "Source Map", "Key Findings", "Write-In Decision", "none-with-reason"],
-    "references/evaluation-method.md": ["Unknown Domain Research Test", "research-needed", "Domain Research Brief", "Multimodal Tool Route Regression", "No Domain Research Brief", "Surface guessed", "baseline", "Domain Research", "multimodal", "Loop Closure"],
+    "references/evaluation-method.md": ["Unknown Domain Research Test", "Target Role Locking Regression", "Case Variable Eval", "research-needed", "Domain Research Brief", "Multimodal Tool Route Regression", "No Domain Research Brief", "Surface guessed", "baseline", "Domain Research", "multimodal", "Loop Closure"],
 }
 
 
