@@ -97,7 +97,7 @@
 
 ### 3 分钟可见结果
 
-用户给出一个技能想法后，先产出一张 `Skill Design Board`，包括：Domain Research Brief、领域模型、平台/工作表面、用户最终品、原生媒介、生成链路、是否值得 skill 化、核心失败模式、杀手机制、初版文件结构、必跑 eval、ready 前缺口。
+用户明确要创建 skill 后，先产出一张 `Skill Design Board`，包括：Domain Research Brief、领域模型、平台/工作表面、用户最终品、原生媒介、生成链路、创建路线、核心失败模式、杀手机制、初版文件结构、必跑 eval、ready 前缺口。
 
 ### 最终交付
 
@@ -139,7 +139,7 @@ verification-summary.md
 - 常见工具、平台、交付表面是什么？
 - 用户第一眼判断什么？
 - 哪些输入必须真实？哪些可以生成？哪些绝不能伪造？
-- 结论是 `make` / `do-not-make` / `research-needed`？
+- 创建路线是 `proceed` / `research-needed` / `blocked`？
 
 输出：Domain Research Brief。没有它，不进入 SKILL.md。
 
@@ -156,7 +156,7 @@ verification-summary.md
 - 主题或材料如何变成最终成品？
 - 哪些素材必须真实提供，哪些可以生成，哪些不能伪造？
 
-输出：`make` / `do-not-make` / `research-needed`。
+输出：创建路线 `proceed` / `research-needed` / `blocked`。
 
 ### Step 2.5. Local Capability And Multimodal Tooling Board
 

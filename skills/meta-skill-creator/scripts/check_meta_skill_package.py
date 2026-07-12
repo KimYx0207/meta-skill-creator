@@ -54,7 +54,7 @@ KEY_PHRASES = {
     "references/multimodal-tooling.md": ["Capability Inventory", "Multimodal Brief Contract", "Route Selection Rule", "Output evidence", "Image2 / host-native", "Downgrade proof"],
     "references/release-gate.md": ["发布门禁", "十四项门禁", "证据扫查", "验收运行记录", "就绪规则", "闭环", "none-with-reason"],
     "references/closed-loop-governance.md": ["闭环定义", "原创循环", "阶段契约", "写回决策", "证据分层", "漂移信号", "原创边界", "nextRunReuseKey"],
-    "assets/domain-research-brief-template.md": ["原始意图", "领域假设", "技能化决定", "本地能力清单"],
+    "assets/domain-research-brief-template.md": ["原始意图", "领域假设", "创建路线", "本地能力清单"],
     "assets/multimodal-prompt-brief-template.md": ["能力清单", "产物简报", "提示词变体", "验证"],
     "assets/acceptance-run-template.md": ["运行类型", "读取边界", "校验命令", "证据分层", "分数与判定"],
     "assets/loop-run-record-template.md": ["Intent Core", "Evidence Fetch", "Product Surface", "Package Contract", "Verification Evidence", "Loop Decision", "Scar Record", "next_run_reuse_key"],

@@ -59,7 +59,7 @@ Decision impact:
 
 - prioritize the user's real job over generic templates
 - define hard stops and review gates
-- decide whether a workflow deserves a reusable skill
+- shape the reusable skill the user explicitly asked to create
 
 ### Benchmarks And Baselines
 

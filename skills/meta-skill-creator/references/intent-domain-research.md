@@ -1,6 +1,8 @@
 # Intent Domain Research
 
-This is the upstream layer for every skill created by `meta-skill-creator`.
+This is the upstream design layer after a user asks `meta-skill-creator` to create a skill.
+
+An explicit skill request already selects the creation route. Research decides the domain model, artifact chain, scope, and evidence needs. It does not decide whether to overrule the user's request.
 
 Do not start from a familiar platform example. Do not guess the user's workflow from a category name. First research the intent domain, then derive the work surface, native artifacts, generation chain, package plan, and evals.
 
@@ -98,7 +100,7 @@ Every candidate skill starts with this brief:
 - Things not to simulate:
 - High-signal examples:
 - Counterevidence / boundary:
-- Decision: `make` / `do-not-make` / `research-needed`
+- Creation route: `proceed` / `research-needed` / `blocked`
 - Next research queries:
 
 The brief can be short, but it cannot be absent.

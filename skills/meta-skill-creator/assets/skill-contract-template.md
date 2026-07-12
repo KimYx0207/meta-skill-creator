@@ -25,7 +25,7 @@
 - 可以生成的部分：
 - 不得模拟的部分：
 - 反证：
-- 决定：`make` / `do-not-make` / `research-needed`
+- 创建路线：`proceed` / `research-needed` / `blocked`
 - 写 `SKILL.md` 前的停止条件：
 
 ## 体验表面契约

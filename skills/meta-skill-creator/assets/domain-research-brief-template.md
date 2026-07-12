@@ -63,8 +63,8 @@
 - 降级触发：
 - 声称就绪前必须证明什么：
 
-## 技能化决定
-- 决定：`make` / `do-not-make` / `research-needed`
+## 创建路线
+- 路线：`proceed` / `research-needed` / `blocked`
 - 原因：
 - 下一步研究问题：
-- 写 `SKILL.md` 前必须先证明：
+- 写 `SKILL.md` 前还缺什么：

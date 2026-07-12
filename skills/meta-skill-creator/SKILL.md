@@ -13,7 +13,7 @@ license: MIT
 ## 核心契约
 
 - 从用户真实工作流出发，不从个人偏好的模板出发。
-- 写文件前先证明这件事值得技能化；一次性任务不要硬做成技能包。
+- 用户明确要求创建、重构或评审 skill 时，直接进入对应路线；领域研究用来决定怎么把它做对，不用来推翻用户的创建意图。
 - `SKILL.md` 只保留路由面：触发、第一动作、渐进加载、硬停止和验证。
 - 详细研究、产品设计、包计划、触发评测、验收方法和模板放到 `references/`、`assets/`、`evals/`、`scripts/`。
 - 需要补全模糊意图、让用户多次选择或先锁 MVP 再批量生成的 skill，必须设计 Codex `request_user_input` / Claude Code `AskUserQuestion` 等宿主原生决策面；Markdown 选择卡只能是降级等待界面，不能冒充真实确认。
@@ -29,7 +29,7 @@ license: MIT
 | 当前阶段 | 读取 | 何时使用 |
 |---|---|---|
 | 顶级创建规则 | `references/creation-rule-standard.md` | 用户要求规则、规范、流程、验收标准、Critical/Fetch/Deep Thinking/Review 阶段契约，或要评审“创建规则是否足够顶级”。 |
-| 意图与领域研究 | `references/intent-domain-research.md`、`assets/domain-research-brief-template.md` | 用户输入模糊、领域陌生、像战略判断，或可能只是一次性提示词；先写领域研究简报，证据不足标 `research-needed`。 |
+| 意图与领域研究 | `references/intent-domain-research.md`、`assets/domain-research-brief-template.md` | 用户输入模糊、领域陌生或缺少关键材料；先写领域研究简报，证据不足标 `research-needed`。 |
 | 表面与产物链 | `references/experience-surface-model.md` | Skill 要产出文件、媒体、截图、演示文稿、报告、仪表盘或其他可见产物。 |
 | 产品化设计 | `references/product-design.md` | 需要决定包内文件、3 分钟可见结果、用户旅程或首次公开表面。 |
 | 运行契约 | `references/skill-contract.md` | 写入或改动候选技能包前使用。 |
@@ -45,7 +45,7 @@ license: MIT
 
 ## 工作流
 
-1. Critical Thinking：判断是 `new-skill`、`refactor-skill`、`evaluate-skill`、`package-plan`、`release-prep` 还是 `not-a-skill`；写清用户结果、范围、非目标、风险、第一证据路线和是否值得技能化。
+1. Critical Thinking：将明确的创建、重构、评审、包计划或发布准备请求路由为 `new-skill`、`refactor-skill`、`evaluate-skill`、`package-plan` 或 `release-prep`；写清用户结果、范围、非目标、风险和第一证据路线。明确的创建请求固定进入 `new-skill`，不因任务看起来一次性而被否决。
 2. Fetch：只收集会改变包决策、产物表面、工具路线或验收标准的证据；包括用户材料、本地包、Graphify/搜索、官方/平台文档、高信号样例、反证和不可得路径。
 3. Deep Thinking：把证据综合成触发边界、输入输出、产物链、本地能力路线、交互式决策面、MVP 锁定门、包结构、评测计划和公开失败模式。
 4. Build：只创建或修改当前目标必须触碰的最小文件集；每个新增文件或规则必须绑定一个具体失败模式。
@@ -69,7 +69,7 @@ license: MIT
 
 遇到以下情况先停止并说明阻塞：
 
-- 任务只是一次性提示词，不是可重复工作流。
+- 用户没有提出创建、重构或评审 skill，而任务只需一次性提示词或普通交付。
 - 领域表面靠猜，没有用户材料、本地证据或当前来源证据支撑。
 - 多模态 Skill 没有本地能力清单和输出证据路线。
 - 需要用户多轮决策或 MVP 确认，却没有原生选择工具、降级等待界面、确认状态字段和批量生成停止规则。

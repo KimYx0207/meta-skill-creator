@@ -62,7 +62,7 @@ Use this contract for every non-trivial skill creation, refactor, evaluation, or
 
 ### 1. Critical Thinking
 
-Purpose: decide whether the request should become a skill, what kind of package it is, and what would count as success.
+Purpose: honor an explicit skill request, determine what kind of package it is, and define what would count as success.
 
 Inputs:
 
@@ -71,7 +71,7 @@ Inputs:
 
 Required actions:
 
-- Classify the task as `new-skill`, `refactor-skill`, `evaluate-skill`, `package-plan`, `release-prep`, or `not-a-skill`.
+- Classify the task as `new-skill`, `refactor-skill`, `evaluate-skill`, `package-plan`, or `release-prep`. An explicit request to create a skill is always `new-skill`; do not relabel it because the workflow looks one-off.
 - Identify user, pressure moment, final artifact, and why ordinary prompting is insufficient.
 - Separate durable scope from case variables such as names, target roles, stakeholder labels, industries, companies, example sections, and one-run acceptance phrases.
 - Name scope, non-goals, destructive or external-state risks, and likely proof layers.
@@ -79,17 +79,17 @@ Required actions:
 
 Required output:
 
-- Critical brief with task class, skillization decision candidate, user result, scope, risk, and needed evidence.
+- Critical brief with task class, user result, scope, risk, creation route, and needed evidence.
 
 Pass criteria:
 
-- A reviewer can tell what job the skill solves, what it must not do, and what evidence would change the decision.
+- A reviewer can tell what job the skill solves, what it must not do, and what evidence would change its design.
 - The next action is evidence fetching, not file writing.
 
 Fail conditions:
 
 - No user result or final artifact is named.
-- A one-off prompt is forced into a skill.
+- An explicit creation request is rejected or downgraded because the agent thinks a prompt would be enough.
 - The agent starts from a familiar template, platform, or example before classifying the request.
 
 ### 2. Fetch

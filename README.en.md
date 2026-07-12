@@ -2,7 +2,7 @@
 
 Meta Skill Creator is an Agent Skill package for designing, refactoring, and reviewing reusable skills.
 
-It helps an agent decide whether a repeated workflow deserves to become a skill, then guides domain research, product-surface design, package structure, validation, release gates, and closed-loop writeback.
+When a user explicitly asks to create, refactor, or review a skill, it enters that route directly. The package then guides domain research, product-surface design, package structure, validation, release gates, and closed-loop writeback.
 
 This is not a prompt beautifier. A good skill package should prove what it does, where it runs, what evidence it used, and what must happen after a failure.
 
@@ -28,7 +28,7 @@ Critical Thinking -> Fetch -> Deep Thinking -> Review -> Loop
 
 The point of this flow is to keep proof layers separate:
 
-- Critical Thinking: decide the request type and whether it deserves a reusable skill.
+- Critical Thinking: identify the request type and route an explicit skill request directly into creation.
 - Fetch: read evidence that can change the decision, instead of copying a familiar example.
 - Deep Thinking: design package structure, artifact chain, tool route, and release gates.
 - Review: separate structure checks, runtime evidence, artifact evidence, and human confirmation.
@@ -40,7 +40,7 @@ A top-level creation rule is not a longer prompt. It is an executable and review
 
 | Stage | Required output | Pass standard |
 |---|---|---|
-| Critical Thinking | Task class, user result, scope, non-goals, risk, first evidence route | The agent can decide whether the workflow deserves a skill, and the next step is evidence fetch rather than file writing |
+| Critical Thinking | Task class, user result, scope, non-goals, risk, first evidence route | An explicit creation request is not rejected; the next step gathers evidence for the right design instead of writing from a generic template |
 | Fetch | Source map, evidence read, unavailable evidence, key findings, counterevidence, decision impact | Each key design judgment is evidence-backed or assumption-marked; online research is used when required |
 | Deep Thinking | Package contract, artifact chain, tool route, write-in destination, acceptance plan | Each new file or rule prevents a named failure mode, and acceptance can be checked |
 | Review | Validation commands, proof layers, artifact/runtime evidence, ready level, loop decision | Structure pass is not treated as quality proof; failures become writeback, proposal, deferral, or blocked status |

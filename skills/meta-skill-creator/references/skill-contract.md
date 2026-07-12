@@ -35,7 +35,7 @@
 
 ### Ambiguous Handling
 
-先判断三个维度：是否重复使用、是否有稳定输入输出、是否需要 bundled resources。三项至少两项为是，进入 skill 化；否则给一次性方案。
+用户明确说创建、重构或评审 skill 时，直接进入对应路线。没有明确创建意图时，才澄清他要的是一次性结果、模板、脚本、工作流还是 skill；不要用重复性、输入输出或资源数量否决已经明确的创建请求。
 
 ## Domain Research Contract
 
@@ -58,7 +58,7 @@
 - Generated components:
 - Must not simulate:
 - Counterevidence:
-- Decision: `make` / `do-not-make` / `research-needed`
+- Creation route: `proceed` / `research-needed` / `blocked`
 
 If this contract is missing or evidence-thin, stop before writing `SKILL.md`.
 

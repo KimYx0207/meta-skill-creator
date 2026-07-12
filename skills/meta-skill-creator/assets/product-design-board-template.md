@@ -17,7 +17,7 @@
 - 可以生成的部分：
 - 不得模拟：
 - 反证：
-- 决定：`make` / `do-not-make` / `research-needed`
+- 创建路线：`proceed` / `research-needed` / `blocked`
 
 ## 用户与任务
 - 用户：
@@ -52,8 +52,8 @@
 -> 验收门槛
 ```
 
-## 技能化决定
-- 做 / 不做 / research-needed：
+## 创建路线
+- proceed / research-needed / blocked：
 - 普通提示词为什么不够：
 - 需要哪些可复用资源：
 
