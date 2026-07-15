@@ -2,6 +2,8 @@
 
 > English version: [README.en.md](README.en.md)
 
+> 因合并关系，本仓库已迁入 [Kim Service](https://github.com/KimYx0207/Kim_Service) 合集，不再单独发布新版本。请前往 Kim Service 获取新版本、安装说明和更新记录。
+
 Meta Skill Creator 是一个用来设计、重构、评审 Agent Skill 的技能包。
 
 它不是“美化提示词”的工具。用户明确要创建、重构或评审 skill 时，它直接进入对应路线，再把这件事推进到领域研究、产品表面、包结构、验证、发布门禁和闭环写回。

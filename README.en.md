@@ -1,5 +1,7 @@
 # Meta Skill Creator
 
+> This repository has been merged into [Kim Service](https://github.com/KimYx0207/Kim_Service) and no longer publishes standalone releases. Please use Kim Service for new versions, installation instructions, and release notes.
+
 Meta Skill Creator is an Agent Skill package for designing, refactoring, and reviewing reusable skills.
 
 When a user explicitly asks to create, refactor, or review a skill, it enters that route directly. The package then guides domain research, product-surface design, package structure, validation, release gates, and closed-loop writeback.
